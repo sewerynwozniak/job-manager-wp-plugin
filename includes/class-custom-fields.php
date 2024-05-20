@@ -69,7 +69,7 @@ public function save_meta_box_data( $post_id ) {
 }
 }
 
-// Example usage:
+
 $post_type = 'job-offer';
 $fields = array( 'place', 'salary' );
 

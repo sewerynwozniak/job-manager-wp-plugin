@@ -25,8 +25,10 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
 
+ 
  require_once plugin_dir_path( __FILE__ ) . 'includes/class-custom-post-type.php';
  require_once plugin_dir_path( __FILE__ ) . 'includes/class-custom-fields.php';
+ require_once plugin_dir_path( __FILE__ ) . 'includes/class-job-offer-template.php';
 
 
 function create_block_job_manager_block_init() {
@@ -40,14 +42,14 @@ add_action( 'init', 'create_block_job_manager_block_init' );
 
 
 // Filter the single template for job offers
-function load_job_offer_single_template( $template ) {
-    global $post;
+// function load_job_offer_single_template( $template ) {
+//     global $post;
 
-    if ( 'job-offer' === $post->post_type && locate_template( array( 'single-job-offer.php' ) ) !== $template ) {
-        return plugin_dir_path( __FILE__ ) . 'templates/single-job-offer.php';
-    }
+//     if ( 'job-offer' === $post->post_type ) {
+//         return plugin_dir_path( __FILE__ ) . 'templates/single-job-offer.php';
+//     }
 
-    return $template;
-}
-add_filter( 'single_template', 'load_job_offer_single_template' );
+//     return $template;
+// }
+// add_filter( 'single_template', 'load_job_offer_single_template' );
 
