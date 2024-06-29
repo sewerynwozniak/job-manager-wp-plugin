@@ -41,7 +41,9 @@
         <!-- Application Form -->
         <div class="job-application-form">
             <h2>Apply for this Job</h2>
-            <form id="job-application-form" method="post" enctype="multipart/form-data">
+            
+
+            <form id="job-application-form" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" method="post"              enctype="multipart/form-data">
                 <p>
                     <label for="applicant_name">Your Name:</label>
                     <input type="text" id="applicant_name" name="applicant_name" required>
@@ -52,14 +54,17 @@
                 </p>
                 <p>
                     <label for="applicant_cv">Upload your CV:</label>
-                    <input type="file" id="applicant_cv" name="applicant_cv" accept=".pdf,.doc,.docx" required>
+                    <!-- <input type="file" id="applicant_cv" name="applicant_cv" accept=".pdf,.doc,.docx" required> -->
                 </p>
                 <p>
                     <input type="hidden" name="job_offer_id" value="<?php echo get_the_ID(); ?>">
+                    <input type="hidden" name="action" value="submit_job_application">
                     <?php wp_nonce_field('job_application_form', 'job_application_nonce'); ?>
                     <input type="submit" name="submit_application" value="Apply Now">
                 </p>
             </form>
+
+
         </div>
 
         <?php
@@ -71,3 +76,8 @@
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
+
+
+
+
+

@@ -13,6 +13,7 @@ public function __construct($post_type, $fields) {
     add_action( 'save_post', array( $this, 'save_meta_box_data' ) );
 }
 
+
 public function add_meta_box() {
     add_meta_box(
         "{$this->post_type}_meta_box",
@@ -70,7 +71,7 @@ public function save_meta_box_data( $post_id ) {
 }
 
 
-$post_type = 'job-offer';
+$post_type = 'job-offers';
 $fields = array( 'place', 'salary' );
 
 $custom_fields_manager = new Custom_Fields_Manager( $post_type, $fields );

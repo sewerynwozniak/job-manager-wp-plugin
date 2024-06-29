@@ -10,13 +10,13 @@ class Job_Offer_Template {
     }
 
     public function load_template( $template ) {
-    global $post;
-
-    if ( 'job-offer' === $post->post_type ) {
-        return plugin_dir_path( __DIR__ ) . 'templates/single-job-offer.php';
-    }
-
-    return $template;
+        global $post;
+        
+        if ( 'job-offers' === $post->post_type ) {
+            return plugin_dir_path( __DIR__ ) . 'templates/single-job-offer.php';
+        }
+    
+        return $template;
     }
 
 
