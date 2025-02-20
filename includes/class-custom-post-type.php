@@ -19,8 +19,10 @@ class Custom_Post_Type {
                 'rewrite' => array('slug' => 'job-offers'),
                 'show_in_rest' => true,
                 'supports' => array('title', 'editor', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields'),
-                'show_in_menu' => false
-                
+                'show_in_menu' => false,
+                'capability_type' => array('job_offer', 'job_offers'),
+                'map_meta_cap' => true,
+               
      
             )
         );
@@ -38,7 +40,9 @@ class Custom_Post_Type {
                 'rewrite' => array('slug' => 'applicants'),
                 'show_in_rest' => true,
                 'supports' => array('title', 'editor', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields'),
-                'show_in_menu' => false
+                'show_in_menu' => false,
+                'capability_type' => array('applicant', 'applicants'),
+                'map_meta_cap' => true,
             
        
             )

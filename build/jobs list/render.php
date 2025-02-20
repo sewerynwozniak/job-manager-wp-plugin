@@ -6,3 +6,4 @@
 <p <?php echo get_block_wrapper_attributes(); ?>>
 	<?php esc_html_e( 'Job Manager – hello from a dynamic block!', 'job-manager' ); ?>
 </p>
+
